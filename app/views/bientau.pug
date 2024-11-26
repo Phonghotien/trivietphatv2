@@ -1,0 +1,196 @@
+extends layout/layout
+block vars
+    -title = 'Biến tấu'
+    -mainClass = 'page-contrast'
+    -bodyClass = 'contrast-body'
+    -hdClass = ''
+    -jsLibs = [JsJquery, JsAos, JsSwiper, JsSplitting, JsSmoothScroll, JsGsap, JsGsapScrollTrigger, JsSplide, JsSplideAuto]
+    -jsComponents = ['swiper', 'header', 'mobile', 'splitting','scrollTrigger', 'animated','collapse','parallax']
+    -cssLibs = [CssAos, CssSwiper, CssFontAwesomeAll, CssFontAwesome, CssSplitting,CssSplide]
+    -cssComponents = ['banner']
+    -cssPages = ['childpage','contrast','news']
+
+block container
+    .banner 
+        .bg 
+            +img("banner.jpg")
+    .marquee
+        .marquee-text 
+            each val,index in Array(2)
+                .marquee-item 
+                    span.ora POUR OUR HEARTS 
+                    span.fw-7
+                        |INTO PERFECT SOLUTIONS
+            each i,index in Array(3)
+                .marquee-item 
+                    span.ora DỐC TOÀN TÂM 
+                    span.fw-7
+                        |TRAO GIẢI PHÁP TOÀN DIỆN
+    section.sec-cts.ss-pd-t
+        .container 
+            .cts
+                .cts-wrap 
+                    .cts-head 
+                        .title.center
+                            h3.title-36 
+                                | THỰC PHẨM TƯƠNG LAI
+                                br
+                                span.green SỰ HÒA QUYỆN 
+                                    br
+                                    | CỦA 5 GIÁC QUAN TẠO RA VỊ NGON
+                            p.title-des 
+                                | Thực phẩm Trí Việt Phát Foods tạo ra được vị ngon lan tỏa 
+                                br
+                                |đến 5 giác quan nhờ vào sự cân bằng và hòa quyện hoàn hảo các hương vị.
+                    .cts-block 
+                        .cts-grid 
+                            .cts-col
+                                .cts-it 
+                                    .b-inner 
+                                        a(href="").b-img
+                                            +img("cts-img (1).jpg")
+                            .cts-col
+                                .cts-it 
+                                    .b-inner 
+                                        a(href="").b-img
+                                            +img("cts-img (2).jpg")
+                            .cts-col
+                                .cts-it
+                                    .b-inner
+                                        .b-content 
+                                            a(href="").t-text 
+                                                | LOREM
+                            .cts-col
+                                .cts-it 
+                                    .b-inner 
+                                        a(href="").b-img
+                                            +img("cts-img (3).jpg")
+                            .cts-col
+                                .cts-it 
+                                    .b-icon 
+                                        +img("icon-mark.svg")
+                                    .b-inner
+                                        .b-content 
+                                            a(href="").t-text 
+                                                | LOREM
+                            .cts-col
+                                .cts-it 
+                                    .b-inner 
+                                        a(href="").b-img
+                                            +img("cts-img (4).jpg")
+    section.sec-ncn.ss-pd
+        .container 
+            .ncn
+                .ncn-wrap 
+                    .ncn-head 
+                        .title.center
+                            h3.title-36 
+                                span.green NGON CHUẨN NHÀ
+                            p.title-des 
+                                | Chúng tôi hiểu rằng bữa cơm, bữa tiệc,... không chỉ là ăn uống mà còn là khoảnh khắc quây quần, chia sẻ và yêu thương. Mỗi công thức được thiết kế đơn giản sử dụng các sản phẩm Trí Việt Phát Foods như gia vị, nước sốt và nguyên liệu pha chế sẽ giúp biến những nguyên liệu quen thuộc thành các món ăn hấp dẫn. Chúng tôi mong muốn khách hàng có thể dễ dàng thực hiện những bữa ăn ngon miệng, mang đậm hương vị gia đình ngay tại căn bếp của mình. Trí Việt Phát Foods hy vọng sẽ là cầu nối giúp mỗi bữa ăn trở thành một kỷ niệm đẹp, khơi dậy niềm đam mê nấu nướng và gắn kết tình cảm giữa các thành viên.
+                        +Btn("XEM THÊM","","","ic-arrow.svg")
+                    .ncn-block 
+                        .ncn-slider.slideSw
+                            +Swiper()
+                                each i,index in Array(4)
+                                    .swiper-slide.col.col-4 
+                                        .news-pop-item.ncn-custom
+                                            .inner  
+                                                .img
+                                                    a(href="").img-inner 
+                                                        +img(`np${index+1}.jpg`)
+                                                .content 
+                                                    a(href="").t-link
+                                                        |  LOREM IPSUM
+                                            a(href="").btn-circle
+                                                +img("ic-arrow.svg")
+    section.ss-core
+        .core.ss-pd.sec-ncnc
+            .container 
+                .core-wrapper 
+                    .news-newest    
+                        .title
+                            h3.title-36 
+                                span.green NGON CHUẨN QUÁN
+                            p.title-des 
+                                | Bữa ăn trong nhà hàng không chỉ đơn giản phục vụ món ăn, mà còn phải mang đến một trải nghiệm tuyệt vời, để khách hàng thoải mái thưởng thức và tận hưởng ẩm thực. Với mục tiêu cung cấp công thức chuẩn để hỗ trợ các nhà hàng, Trí Việt Phát Foods mang đến những giải pháp đơn giản và hiệu quả. Sử dụng các sản phẩm như gia vị, nước sốt và nguyên liệu pha chế, chúng tôi giúp biến những nguyên liệu quen thuộc thành các món ăn hấp dẫn, chuẩn vị nhà hàng.
+                    .ncn-block 
+                        .ncn-slider.slideSw
+                            +Swiper()
+                                each i,index in Array(3)
+                                    .swiper-slide.col.col-4 
+                                        .news-pop-item.ncn-custom
+                                            .inner  
+                                                .img
+                                                    a(href="").img-inner 
+                                                        +img(`ncnc-img (${index+1}).jpg`)
+                                                .b-pos 
+                                                    .t-head 
+                                                        a(href="").t-link
+                                                            |  LOREM IPSUM
+                                                    .t-des 
+                                                        p 
+                                                            | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud . 
+                                            a(href="").btn-circle
+                                                +img("ic-arrow.svg")
+    section.sec-prdh.ss-pd-t 
+        .container 
+            .prdh
+                .prdh-wrap 
+                    .prdh-row.row 
+                        .col.col-7 
+                            .prdh-pos#work-hero 
+                                .prdh-block.work-hero 
+                                    .prdh-box.work-item.on
+                                        .prdh-it 
+                                            .b-image 
+                                                +img("prdh-img (1).jpg")
+                                    .prdh-box.work-item
+                                        .prdh-it 
+                                            .b-image 
+                                                +img("prdh-img (2).jpg")
+                                    .prdh-box.work-item
+                                        .prdh-it 
+                                            .b-image 
+                                                +img("prdh-img (2).jpg")
+                                    .prdh-box.work-item
+                                        .prdh-it 
+                                            .b-image 
+                                                +img("prdh-img (2).jpg")
+                        .col.col-5
+                            .prdh-ctn 
+                                .t-head 
+                                    .title
+                                        h3.title-36 
+                                            span.green SẢN PHẨM TIÊU BIỂU
+                                    span.dcor 
+                                        +img("text-arrow.svg")
+                                .t-des 
+                                    p 
+                                        | Trí Việt Phát Foods tự hào giới thiệu các sản phẩm tiêu biểu mang đậm chất lượng và hương vị đặc trưng. Sản phẩm của chúng tôi được chế biến từ nguyên liệu tự nhiên, giúp nâng tầm món ăn với hương vị đậm đà và dễ sử dụng. Trí Việt Phát Foods cam kết mang lại an toàn thực phẩm và chất lượng tốt nhất cũng như luôn nỗ lực để đáp ứng nhu cầu ngày càng cao của khách hàng.
+                                +Btn("XEM THÊM","","","ic-arrow.svg")
+    section.sec-newsrl.ss-pd
+        .container 
+            .newsrl
+                .newsrl-wrap 
+                    .newsrl-head 
+                        .title.center
+                            h3.title-36 
+                                span.green TIN TỨC SỰ KIỆN
+                    .newsrl-block 
+                        .newsrl-slider.slideSw 
+                            +Swiper()
+                                each i,index in Array(4)
+                                    .col.col-4.swiper-slide 
+                                        .news-pop-item 
+                                            .inner  
+                                                .img
+                                                    a(href="").img-inner 
+                                                        +img(`np${index+1}.jpg`)
+                                                    a(href="").btn-circle
+                                                        +img("ic-arrow.svg") 
+                                                    .tags Lorem ipsum
+                                                .info 
+                                                    h4 
+                                                        a(href="").info-tt Nữ startup Việt - mục tiêu doanh thu 1.000 tỷ, mang HƯƠNG VỊ Việt vươn tầm thế giới
+                                                    p.info-des  Xuất phát điểm với 87 triệu đồng, sau 10 năm, Trí Việt Phát Foods đã từng bước vươn tầm quốc tế, doanh thu 157 tỷ đồng một năm, đặt ra mục tiêu 1.000 tỷ doanh thu trong vòng 4 năm tới.

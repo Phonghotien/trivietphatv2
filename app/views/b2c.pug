@@ -1,0 +1,68 @@
+extends layout/layout
+block vars
+    -title = 'b2c'
+    -mainClass = 'page-product'
+    -bodyClass = 'product-body'
+    -hdClass = ''
+    -jsLibs = [JsJquery, JsAos, JsSwiper, JsSplitting, JsSmoothScroll, JsGsap, JsGsapScrollTrigger, JsSplide, JsSplideAuto]
+    -jsComponents = ['swiper', 'header', 'mobile', 'splitting','scrollTrigger', 'animated','collapse','parallax']
+    -cssLibs = [CssAos, CssSwiper, CssFontAwesomeAll, CssFontAwesome, CssSplitting,CssSplide]
+    -cssComponents = ['banner']
+    -cssPages = ['childpage','product']
+
+block container
+   .banner 
+      .bg 
+         +img("banner.jpg")
+   .marquee
+      .marquee-text 
+         each val,index in Array(2)
+               .marquee-item 
+                  span.ora POUR OUR HEARTS 
+                  span.fw-7
+                     |INTO PERFECT SOLUTIONS
+         each i,index in Array(3)
+               .marquee-item 
+                  span.ora DỐC TOÀN TÂM 
+                  span.fw-7
+                     |TRAO GIẢI PHÁP TOÀN DIỆN
+   section.sec-sbr.ss-pd
+      .container 
+         .sbr
+            .sbr-wrap 
+               .sbr-head 
+                  .b-image 
+                     +img("sbr-himg.jpg")
+                     .b-pos 
+                        .title.center(data-aos="fade-up")
+                           h3.title-36 
+                              span.green
+                                 | SẢN PHẨM
+                              span.ora 
+                                 | SÁNG TẠO 
+                              span.green
+                                 | VỊ NGON TUYỆT HẢO
+                        .t-text(data-aos="fade-right") 
+                           span.inner-text
+                              | BỘ SẢN PHẨM TRÍ VIỆT PHÁT
+               .sbr-block 
+                  .sbr-list 
+                     each i,index in Array(3)
+                        .b-col 
+                           .sbr-it
+                              .b-inner 
+                                 +img(`sbr-icon (${index+1}).png`)
+   section.sec-sprd.ss-pd-t 
+      .container 
+         .sprd
+            .sprd-wrap 
+               .sprd-top 
+                  .b-inner 
+                     .title.center(data-aos="fade-up")
+                           h3.title-36 
+                              span.green
+                                 | GU NGON
+                     .t-des 
+                        p 
+                           | Thương hiệu dẫn đầu trong lĩnh vực gia vị sáng tạo, đáp ứng các nhu cầu mới về giải pháp chấm ngon, nấu nhanh gọn nhưng chuẩn vị của phân khúc tiêu dùng cao cấp.
+                     +Btn("XEM THÊM")

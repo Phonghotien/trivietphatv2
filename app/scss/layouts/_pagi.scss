@@ -1,0 +1,77 @@
+.page-numbers {
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    margin-top: 1.6rem;
+    &.right {
+        width: fit-content;
+        margin-left: auto;
+    }
+    &.left {
+        width: fit-content;
+        margin-right: auto;
+    }
+    >li {
+        &:not(:first-child) {
+            margin-left: 8px;
+        }
+        &>.page-numbers {
+            margin-top: 0;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: .8rem;
+            padding-bottom: 0.2rem;
+            background-color: transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            color:#030823;
+            font-weight: 400;
+            font-size: 1.6rem;
+            transition: 0.4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+            padding-top: 0.2rem;
+            @include affter(var(--color-pri));
+            @include max(1200px) {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+            &:after {
+                z-index: -1;
+            }
+            @include hover {
+                box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.08);
+                &:not(.dot) {
+                    color: white;
+                    &::after {
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+            &.current {
+                color: white;
+                border: 0.1rem solid var(--color-pri);
+                box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.08);
+                img {
+                    filter: brightness(1) invert(1);
+                }
+                &::after {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+            &.dot {
+                background-color: transparent;
+            }
+            i {
+                font-weight: 400;
+            }
+        }
+    }
+}

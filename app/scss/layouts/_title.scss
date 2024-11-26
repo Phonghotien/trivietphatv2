@@ -1,0 +1,65 @@
+.title {
+  &-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: "Space Grotesk", sans-serif;
+    &.t-center {
+      text-align: center;
+      align-items: center;
+    }
+    &.white {
+      .title-48 {
+        color: white;
+      }
+      .title-des {
+        color: white;
+      }
+    }
+  }
+  &-sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    gap: 1rem;
+    padding: 0 1rem;
+    border-radius: 100rem;
+    border: 0.1rem solid black;
+    height: 3.5rem;
+    font-weight: 600;
+    color: var(--color-pri);
+    line-height: 1;
+    padding-top: 0.2rem;
+    &::after,
+    &::before {
+      content: "";
+      width: 1.6rem;
+      height: 1.6rem;
+      background-image: url("../assets/images/ic-starred.svg");
+      @include default-background;
+      display: block;
+      @include max(420px) {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    @include max(420px) {
+      font-size: 1.4rem;
+      padding-top: 0;
+    }
+  }
+  &-des {
+    .red {
+      font-weight: 600;
+      color: var(--color-pri);
+    }
+  }
+  &-48 {
+    @include fz-48;
+    font-weight: 700;
+  }
+}
+.fw-7 {
+  font-weight: 700;
+}

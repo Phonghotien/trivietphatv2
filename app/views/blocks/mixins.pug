@@ -1,0 +1,280 @@
+//- button
+mixin Btn(text, type, classCustom, img, ani)
+    if(!img=="")
+      if(type == "button")
+              button.btn(type="submit",class=classCustom)
+                  span.txt
+                    span.txt-inner #{text}
+                    +img(img)
+      else
+          a.btn(href="",class=classCustom)
+              span.txt
+                span.txt-inner #{text} 
+                +img(img) 
+    else 
+      if(!classCustom)
+          if(type == "button")
+              button.btn(type="submit",class=classCustom)
+                  span.txt
+                    span.txt-inner #{text}
+                    +img("arrow.svg")
+          else
+              a.btn(href="",class=classCustom)
+                  span.txt
+                    span.txt-inner #{text} 
+                    +img("arrow.svg")
+      else 
+          if(type == "button")
+              button.btn(type="submit",class=classCustom)
+                  span.txt #{text}
+          else
+              a.btn(href="", class=classCustom)
+                  span.txt #{text}
+//- page number
+mixin PageNumber(classCustom) 
+    ul.page-numbers(class=classCustom)
+        li 
+            a.prev.page-numbers(href="")
+              i.fa-solid.fa-chevron-left
+        li
+            span.page-numbers.current   
+                | 1
+        li
+            a.page-numbers(href="")   
+                | 2
+        li 
+            span.page-numbers.dot 
+                |...
+        li
+            a.page-numbers(href="")   
+                | 10
+        li 
+            a.next.page-numbers(href="")
+              i.fa-solid.fa-chevron-right
+//- breadcrumb
+mixin BreadCrumb(arr,classCustom)
+  .breadcrumb(class=classCustom)
+    .container
+      .breadcrumb-wrapper 
+        ul.breadcrumb-list
+          li.breadcrumb-item(data-aos="fade-left")
+            a.breadcrumb-link(href="")
+              | Trang chủ
+          each arrs in arr
+            li.breadcrumb-item(data-aos="fade-left")
+              a.breadcrumb-link(href="") #{arrs.txt}
+//- swiper pagination
+mixin Pagination(classCustom)
+    .swiper-pagination(class=classCustom)
+//- countdown
+mixin CountDown(time,customClass)
+    .cdw(data-time= time, class= customClass)
+      .cdw-list 
+          .cdw-item(style="display: none")
+              .cdw-inner 
+                  .number.date
+          .cdw-item 
+              .cdw-inner 
+                  .number.hour
+          span.txt :
+          .cdw-item 
+              .cdw-inner 
+                  .number.minute
+          span.txt :
+          .cdw-item 
+              .cdw-inner 
+                  .number.second
+//- swiper control
+mixin SwiperControl(customClass)
+    .swiper-control(class= customClass) 
+      .swiper-control-btn.swiper-prev 
+          i.fa-solid.fa-chevron-left
+      .swiper-control-btn.swiper-next 
+          i.fa-solid.fa-chevron-right
+//- sidebar
+mixin Sidebar(classCustom) 
+  .side-fixed(class=classCustom)
+      .side-fixed-wrap
+        block
+      .side-close
+        i.fas.fa-times.close.icon
+  .side-overlay
+//- check
+mixin Checker(type,shape,text,classCustom,num,name)
+  if(num == "has")
+    if (shape == "circle")
+      label.checker(class=classCustom) 
+        input(type=type, name=name)
+        span.circle 
+        span.txt #{text}
+        span.num 12
+    else 
+      label.checker(class=classCustom) 
+        input(type=type , name=name)
+        span.sqr 
+        span.txt #{text}
+        span.num 12
+  else
+    if (shape == "circle")
+      label.checker(class=classCustom) 
+        input(type=type, name=name)
+        span.circle 
+        span.txt #{text}
+    else 
+      label.checker(class=classCustom) 
+        input(type=type , name=name)
+        span.sqr 
+        span.txt #{text}
+//- count
+mixin Count()
+    .count 
+        .count-btn.count-minus 
+            i.fas.fa-minus.icon
+        input(type="text", class="count-input", max="999", min="0", value="1", hidden)
+        p.count-number 
+        .count-btn.count-plus 
+            i.fas.fa-plus.icon
+//- image
+mixin img(name)
+  img(src="./assets/images/" + name, alt="")
+//- star %
+mixin Star(per)
+  .star
+    .star-list
+      .star-flex.star-empty
+        +img("star-empty.svg")
+        +img("star-empty.svg")
+        +img("star-empty.svg")
+        +img("star-empty.svg")
+        +img("star-empty.svg")
+      .star-flex.star-filter(style="width:"+per)
+        +img("star-fill.svg")
+        +img("star-fill.svg")
+        +img("star-fill.svg")
+        +img("star-fill.svg")
+        +img("star-fill.svg")        
+//- rating
+mixin Rate()
+  .rating
+      label.stars
+        input.star-item(type='radio', name='name', hidden='')
+        i.fa-regular.fa-star
+      label.stars
+        input.star-item(type='radio', name='name', hidden='')
+        i.fa-regular.fa-star
+      label.stars
+        input.star-item(type='radio', name='name', hidden='')
+        i.fa-regular.fa-star
+      label.stars
+        input.star-item(type='radio', name='name', hidden='')
+        i.fa-regular.fa-star
+      label.stars
+        input.star-item(type='radio', name='name', hidden='')
+        i.fa-regular.fa-star
+//- posi - (plus,midle,minus)
+mixin Navigation(classCustom)
+  .swiper-control(class=classCustom)
+    .swiper-control-btn.swiper-prev
+      i.fa-solid.fa-chevron-left
+    .swiper-control-btn.swiper-next
+      i.fa-solid.fa-chevron-right
+//- popup
+mixin Popup(classCustom=classCustom, dataId=dataId)
+  .popup(data-popup-id=dataId)
+    .popup-overlay
+    .popup-main(class=classCustom)
+      .popup-main-wrapper
+        .popup-over
+          .popup-wrapper
+            block
+      .popup-close
+        i.fas.fa-times.icon
+//- swiper
+mixin Swiper(classCustom) 
+  .swiper-container(class=classCustom)
+    .swiper.row.gap-res
+      .swiper-wrapper 
+        block
+
+//- menu
+-
+  var menuItems = [
+    {
+        title: 'TRANG CHỦ',
+        link: ''
+    },
+    {
+      title: 'VỀ CHÚNG TÔI',
+      link: '',
+    },
+    {
+        title: 'HÀNH TRÌNH 10 NĂM',
+        link: '',
+    },
+    {
+        title: 'SẢN PHẨM',
+        link: '',
+        children: [
+              {
+                  title: 'SẢN PHẨM 1',
+                  link: ''
+              },
+              {
+                  title: 'SẢN PHẨM 2',
+                  link: '',
+              },
+              {
+                  title: 'SẢN PHẨM 3',
+                  link: '',
+              }
+            ]
+    },
+    {
+        title: 'BIẾN TẤU',
+        link: '',
+    },
+    {
+        title: 'TIN TỨC',
+        link: '',
+    }
+  ]
+mixin renderMenu(items)
+  ul.menu-list
+    each item in items
+      li.menu-item(class=item.children && item.children.length ? 'dropdown' : '')
+          a.menu-link(href=item.link)= item.title
+          if item.children && item.children.length
+            +renderMenu(item.children)
+          if item.mega
+            .megas
+                .megas-list.row
+                  each megaItem in item.mega
+                      div.megas-item.col
+                          p.tt= megaItem.title
+                          ul.menu-list.row
+                              each menuItem in megaItem.items
+                                  li.menu-item.col  
+                                    a(href="").menu-link= menuItem 
+mixin newsItem(img,tt)
+  .news-item 
+    .inner 
+      .img 
+        a(href="").img-inner
+          +img(img)
+      .info 
+        p.info-date  03.05.2024 bởi Admin Bàu Đá
+        h4 
+          a(href="").info-tt=tt
+        a(href="").info-link.news-link  
+          span.txt Xem chi tiết
+          i.fa-regular.fa-arrow-right
+mixin banner(img,arr,tt,classCustom)
+  .banner(class=classCustom) 
+    .banner-wr 
+      .bg.imgPara
+        +img(img)
+      .container 
+        .banner-ctn 
+          +BreadCrumb(arr)
+          p.sub(data-aos="fade-left" data-aos-delay="400") CÂU CHUYỆN
+          p.tt.add-class.text-hori(data-spl)=tt

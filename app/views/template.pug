@@ -1,0 +1,34 @@
+extends layout/layout
+block vars
+    -title = 'Home'
+    -mainClass = 'page-homes'
+    -bodyClass = 'homes'
+    -hdClass = ''
+    -jsLibs = [JsJquery, JsAos, JsSwiper, JsSplitting, JsSmoothScroll, JsGsap, JsGsapScrollTrigger, JsSplide, JsSplideAuto, JsUkiyo]
+    -jsComponents = ['swiper', 'header', 'search', 'mobile', 'splitting','scrollTrigger', 'animated','collapse','parallax']
+    -cssLibs = [CssAos, CssSwiper, CssFontAwesomeAll, CssFontAwesome, CssSplitting,CssSplide]
+    -cssComponents = ['banner']
+    -cssPages = ['home', 'about','childpage']
+
+block container
+    .ss-pd
+        .container
+            //- =========================================
+            +Btn("Đăng ký tuyển dụng","","","ic-arrow.svg")
+            +Btn("Ứng tuyển ngay","","second","ic-arrow.svg")
+            +Btn("Ứng tuyển ngay","","third","ic-arrow.svg")
+            +Btn("Đăng ký tuyển dụng","","noic","")
+            +Btn("Ứng tuyển ngay","","second","")
+            +Btn("Ứng tuyển ngay","","third","")
+            +Btn("Ứng tuyển ngay","","four","")
+            +Btn("Ứng tuyển ngay","","four","")
+            //- ==========================
+            .core-item
+                .inner 
+                    .img 
+                        a(href="").img-inner
+                            +img(`core${index+1}.jpg`)
+                    a(href="").info-btn SÁNG TẠO
+                    .info 
+                        a(href="").info-btn SÁNG TẠO
+                        p.info-des Tại Trí Việt Phát Foods, tư chất lãnh đạo của mỗi cá nhân được nuôi dưỡng và phát triển bởi sự dấn thân, tìm kiếm vấn đề cốt lõi trong từng công việc.

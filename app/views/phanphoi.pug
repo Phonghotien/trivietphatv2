@@ -1,0 +1,106 @@
+extends layout/layout
+block vars
+    -title = 'Phân phối'
+    -mainClass = 'page-deliver'
+    -bodyClass = 'deliver-body'
+    -hdClass = ''
+    -jsLibs = [JsJquery, JsAos, JsSwiper, JsSplitting, JsSmoothScroll, JsGsap, JsGsapScrollTrigger, JsSplide, JsSplideAuto,JsSelect2]
+    -jsComponents = ['swiper', 'header',, 'mobile', 'splitting','scrollTrigger', 'animated','collapse','parallax','select2']
+    -cssLibs = [CssAos, CssSwiper, CssFontAwesomeAll, CssFontAwesome, CssSplitting,CssSplide,CssSelect2]
+    -cssComponents = ['banner']
+    -cssPages = ['childpage','deliver']
+
+block container
+    .banner 
+        .bg 
+            +img("banner.jpg")
+    .marquee
+        .marquee-text 
+            each val,index in Array(5)
+                .marquee-item 
+                    span.ora POUR OUR HEARTS 
+                    |INTO PERFECT SOLUTIONS
+            .marquee-item 
+                span.ora DỐC TOÀN TÂM 
+                |TRAO GIẢI PHÁP TOÀN DIỆN 
+    section.ss-core 
+        .core.ss-pd
+            .container 
+                .core-wrapper 
+                    .title.center
+                        h3.title-45.add-class.text-hori(data-spl) 
+                            |CỘNG ĐỒNG VÀ CON NGƯỜI
+                            br
+                            span.green LÀ NHỮNG GIÁ TRỊ CỐT LÕI
+                        p.title-des(data-aos="fade-up-cus") Chúng tôi tin rằng một cộng đồng vững mạnh và một đội ngũ nhân viên đoàn kết sẽ là nền tảng cho sự phát triển bền vững của Trí Việt Phát Foods, giúp chúng tôi ngày một vươn xa, mang lại giá trị cho khách hàng và xã hội.
+                    .core-slide 
+                        .swiper.row.rows-3.gap-res 
+                            .swiper-wrapper 
+                                each val,index in Array(3)
+                                    .swiper-slide.col 
+                                        .core-item
+                                            .inner 
+                                                .img 
+                                                    a(href="").img-inner
+                                                        +img(`core${index+1}.jpg`)
+                                                a(href="").info-btn SÁNG TẠO
+                                                .info 
+                                                    a(href="").info-btn SÁNG TẠO
+                                                    p.info-des Tại Trí Việt Phát Foods, tư chất lãnh đạo của mỗi cá nhân được nuôi dưỡng và phát triển bởi sự dấn thân, tìm kiếm vấn đề cốt lõi trong từng công việc.
+    section.ss-deliver
+        .deliver-net.ss-pd
+            .container 
+                .deliver-net-wrapper 
+                    .title.center
+                        h3.title-45.add-class.text-hori(data-spl)
+                            span.green MẠNG LƯỚI PHÂN PHỐI  
+                    .deliver-net-slide 
+                        +SwiperControl
+                        .swiper.row.rows-3.gap-res 
+                            .swiper-wrapper 
+                                .swiper-slide.col 
+                                    .deliver-item 
+                                        .inner
+                                            .top 
+                                                .icon
+                                                    +img("deli1.svg")
+                                                h4.tt HỆ THỐNG SIÊU THỊ
+                                            .bottom
+                                                .deliver-brands 
+                                                    each val,index in Array(8)
+                                                        .deliver-brand 
+                                                            +img(`br${index+1}.png`)
+                                .swiper-slide.col 
+                                    .deliver-item 
+                                        .inner(style="background-image:url('assets/images/deli-bg1.jpg')")
+                                            .top 
+                                                .icon
+                                                    +img("deli2.svg")
+                                                h4.tt XUẤT KHẨU
+                                            .bottom
+                                                p.tt HỖ TRỢ & ĐÀO TẠO
+                                                p.des Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
+                                .swiper-slide.col 
+                                    .deliver-item 
+                                        .inner
+                                            .top 
+                                                .icon
+                                                    +img("deli3.svg")
+                                                h4.tt B2B
+                                            .bottom
+                                                .deliver-brands 
+                                                    each val,index in Array(4)
+                                                        .deliver-brand 
+                                                            +img(`br${index+8}.png`)
+                                .swiper-slide.col 
+                                    .deliver-item 
+                                        .inner(style="background-image:url('assets/images/deli-bg2.jpg')")
+                                            .top 
+                                                .icon
+                                                    +img("deli2.svg")
+                                                h4.tt ĐẠI LÝ BÁN HÀNG
+                                            .bottom
+                                                p.des 
+                                                    |Đại lý có cơ hội phát triển kinh doanh 
+                                                    br
+                                                    |Trí Việt Phát Foods thông qua các chính sách hợp tác linh hoạt, chia sẻ lợi nhuận và các chương trình khuyến mãi hấp dẫn, tạo nền tảng vững chắc cho sự phát triển lâu dài

@@ -1,0 +1,77 @@
+block vars
+    -title = 'Template'
+    -mainClass = 'page-template'
+    -bodyClass = ''
+    -hdClass = ''
+header.hd(class=hdClass)
+    .hd-top 
+        .hd-flex 
+            .hd-lg 
+                .hd-lg-item  Ngôn ngữ
+                .hd-lg-item.active  
+                    .hd-lg-ctn Tiếng Việt
+                    .hd-lg-drop 
+                        a(href="").hd-lg-it Tiếng Anh
+    .hd-bot
+        .container
+            .hd-flex 
+                .hd-logo 
+                    a(href="").header-logo
+                        +img("logo.svg")
+                .hd-nav
+                    .menu-nav
+                        +renderMenu(menuItems)
+                .hd-act
+                    +Btn("LIÊN HỆ","","second","ic-arrow.svg")
+                .burger
+                    #hamburger.hamburger
+                        svg.ham(viewbox='0 0 100 100' width='40')
+                            path.line.top(d='m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40')
+                            path.line.middle(d='m 30,50 h 40')
+                            path.line.bottom(d='m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40')
+    .mobile-overlay
+    .mobile
+        .mobile-con
+            .mobile-wr
+                .mobile-lg
+                    p.mobile-lg-tt Ngôn ngữ:
+                    .mobile-lg-flex  
+                        a(href="").mobile-lg-opt.active
+                            +img("ic-vn.svg") 
+                        a(href="").mobile-lg-opt 
+                            +img("ic-en.svg")  
+                .mobile-nav
+                    .menu-nav
+                        +renderMenu(menuItems)
+                .mobile-content
+                    .social 
+                        .social-list
+                            a(href="").social-link  
+                                +img("ic-fb.svg") 
+                            a(href="").social-link 
+                                +img("ic-linked.svg") 
+                            a(href="").social-link 
+                                +img("ic-tw.svg") 
+                            a(href="").social-link 
+                                +img("ic-ins.svg") 
+    .found.foundJS 
+        .found-over.foundOver
+        .found-x.foundClose 
+            i.fa-solid.fa-xmark-large
+        .found-wr
+            .container 
+                .found-f 
+                    p.tt TÌM KIẾM
+                    form(action="")
+                        .found-form 
+                            input(type="text")
+                            button
+                                +img("ic-srch.svg")
+                            .hd-srchbar-rs.open
+                                each val,index in Array(3) 
+                                    .hd-srchbar-rs-item 
+                                        .img 
+                                            +img("prod1.jpg")
+                                        .info 
+                                            a(href="").info-tt  (한국제지) 복사지 A4 milk
+                                        a(href="").link Xem thêm

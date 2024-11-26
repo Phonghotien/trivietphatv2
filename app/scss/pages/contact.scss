@@ -1,0 +1,59 @@
+@import "../core";
+
+.contact-wrapper {
+    max-width: 101rem;
+    margin: 0 auto;
+}
+.contact-ctn {
+    width: 50%;
+    .wrapper {
+        width: 90%;
+        @include max(700px) {
+            width: 100%;
+        }
+    }
+    @include max(700px) {
+        width: 100%;    
+    }
+}
+.contact-info {
+    width: 50%;
+    .wrapper {
+
+    }
+    @include max(700px) {
+        width: 100%;    
+    }
+}
+.contact-box {
+    background-color: #E2F3DD;
+    padding: 3.2rem;
+    @include max(700px) {
+        padding: 2rem;   
+    }
+}
+.contact-block {
+    &-line {
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+        .name {
+            @include fz-20;
+            font-weight: 700;
+            color: var(--color-pri);
+        }
+    }
+}
+.contact-dec {
+    width: 13.4rem;
+    margin-left: auto;
+    margin-bottom: 1rem;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.contact-recruit {
+    
+}

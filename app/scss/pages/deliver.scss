@@ -1,0 +1,112 @@
+@import "../core";
+.deliver-net {
+    overflow: hidden;
+    &-slide {
+
+        .swiper {
+            overflow: visible;
+            &-control {
+                margin-left: auto;
+                width: fit-content;
+                margin-bottom: 2.4rem;
+            }
+        }
+        .swiper-slide {
+            
+            &:nth-child(4n + 1) {
+                .deliver-item {
+                    .inner {
+                        background-color: var(--color-pri);
+                    }
+                }
+            }
+            &:nth-child(4n + 2) {
+                .deliver-item {
+                    .inner {
+                        @include default-background;
+                    }
+                }
+            }
+            &:nth-child(4n + 3) {
+                .deliver-item {
+                    .inner {
+                        background-color: var(--color-third);
+                    }
+                }
+            }
+            &:nth-child(4n + 4) {
+                .deliver-item {
+                    .inner {
+                        background-color: var(--color-third);
+                        .des {
+                            @include lc(5)
+                        }
+                    }
+                }
+            }
+            @include max(520px) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.deliver-item {
+    height: 100%;
+    .inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 2.4rem;
+        border-radius: 2.4rem 0 2.4rem 0;
+        .top {
+            .icon{
+                width: 4.2rem;
+                height: 4.2rem;
+                flex-shrink: 0;
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            .tt {
+                @include fz-24;
+                font-weight: 700;
+                color: white;
+            }
+        }
+        .bottom {
+            margin-top: 2.4rem;
+            padding-top: 2.4rem;
+            border-top: 0.1rem solid white;
+            .tt {
+                padding: .6rem .8rem;
+                background-color: var(--color-second);
+                color:white;
+                text-transform: uppercase;
+                font-weight: 700;
+                width: fit-content;
+                margin-bottom: 1rem;
+            }
+            .des {
+                color: white;
+                font-weight: 700;
+                font-size: 1.1rem;
+                @include lc(2);
+            }
+        }
+    }
+}
+.deliver-brands {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.deliver-brand {
+    height: 2.7rem;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

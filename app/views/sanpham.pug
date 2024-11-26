@@ -1,0 +1,78 @@
+extends layout/layout
+block vars
+    -title = 'Sản phẩm'
+    -mainClass = 'page-prod'
+    -bodyClass = 'prod-body'
+    -hdClass = ''
+    -jsLibs = [JsJquery, JsAos, JsSwiper, JsSplitting, JsSmoothScroll, JsGsap, JsGsapScrollTrigger, JsSplide, JsSplideAuto,JsSelect2]
+    -jsComponents = ['swiper', 'header',, 'mobile', 'splitting','scrollTrigger', 'animated','collapse','parallax','select2']
+    -cssLibs = [CssAos, CssSwiper, CssFontAwesomeAll, CssFontAwesome, CssSplitting,CssSplide,CssSelect2]
+    -cssComponents = ['banner']
+    -cssPages = ['childpage','prod']
+
+block container
+    .banner 
+        .bg 
+            +img("banner.jpg")
+    .marquee
+        .marquee-text 
+            each val,index in Array(5)
+                .marquee-item 
+                    span.ora POUR OUR HEARTS 
+                    |INTO PERFECT SOLUTIONS
+            .marquee-item 
+                span.ora DỐC TOÀN TÂM 
+                |TRAO GIẢI PHÁP TOÀN DIỆN 
+    section.ss-core.contact-recruit.prod
+        .core.ss-pd
+            .container 
+                .core-wrapper 
+                    .title.center
+                        h3.title-45.add-class.text-hori(data-spl) 
+                            |ĐỒNG HÀNH PHÁT TRIỂN BỀN VỮNG
+                            br
+                            span.green  CÙNG TRÍ VIỆT PHÁT FOODS
+                        p.title-des(data-aos="fade-up-cus") Chúng tôi tin rằng một cộng đồng vững mạnh và một đội ngũ nhân viên đoàn kết sẽ là nền tảng cho sự phát triển bền vững của Trí Việt Phát Foods, giúp chúng tôi ngày một vươn xa, mang lại giá trị cho khách hàng và xã hội.
+                    .core-slide 
+                        .swiper.row.rows-2.gap-res 
+                            .swiper-wrapper 
+                                .swiper-slide.col 
+                                    .recruit-news.prod-news
+                                        .inner 
+                                            a(href="").heads
+                                                h4.title
+                                                    span.title-36 
+                                                        |Các dịch vụ B2B
+                                                        br
+                                                        span.green LÀNH - NGON - SÁNG TẠO 
+                                                span.icon 
+                                                    +img("ic-arrow.svg")
+                                            .des 
+                                                |Thương hiệu dẫn đầu trong lĩnh vực cung cấp gia vị và nguyên liệu 
+                                                |chế biến chất lượng cao, đáp ứng nhu cầu về giải pháp gia vị và gia công sản phẩm
+                                            .img 
+                                                a(href="").img-inner
+                                                    +img(`rc-prod.jpg`) 
+                                .swiper-slide.col 
+                                    .recruit-news.prod-news 
+                                        .inner 
+                                            a(href="").heads
+                                                h4.title
+                                                    span.title-36 
+                                                        |Các sản phẩm B2C
+                                                        br
+                                                        span.green WIL - GUNGON - GUYUMI
+                                                span.icon 
+                                                    +img("ic-arrow.svg")
+                                            .des 
+                                                |Những sản phẩm của Wil, GUNGON, GUYUMI là thành quả lành - ngon - sáng tạo từ chuỗi thực phẩm bền vững thuộc Trí Việt Phát Foods với phương châm:
+                                                ul
+                                                    li Luôn phát triển vì sức khỏe cộng đồng
+                                                
+                                                    li Lấy niềm tin yêu từ khách hàng làm chiến lược
+                                                
+                                                    li Xem thành công của đối tác là nền tảng cho hợp tác lâu dài.
+
+                                            .img 
+                                                a(href="").img-inner
+                                                    +img(`rc-prod.jpg`) 

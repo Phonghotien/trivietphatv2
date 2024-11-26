@@ -1,0 +1,128 @@
+extends layout/layout
+block vars
+    -title = 'Tin tức'
+    -mainClass = 'page-news'
+    -bodyClass = 'news-body'
+    -hdClass = ''
+    -jsLibs = [JsJquery, JsAos, JsSwiper, JsSplitting, JsSmoothScroll, JsGsap, JsGsapScrollTrigger, JsSplide, JsSplideAuto,JsSelect2]
+    -jsComponents = ['swiper', 'header',, 'mobile', 'splitting','scrollTrigger', 'animated','collapse','parallax','select2']
+    -cssLibs = [CssAos, CssSwiper, CssFontAwesomeAll, CssFontAwesome, CssSplitting,CssSplide,CssSelect2]
+    -cssComponents = ['banner']
+    -cssPages = ['childpage','news']
+
+block container
+    .banner 
+        .bg 
+            +img("banner.jpg")
+    .marquee
+        .marquee-text 
+            each val,index in Array(5)
+                .marquee-item 
+                    span.ora POUR OUR HEARTS 
+                    |INTO PERFECT SOLUTIONS
+            .marquee-item 
+                span.ora DỐC TOÀN TÂM 
+                |TRAO GIẢI PHÁP TOÀN DIỆN 
+    section.ss-news-pop 
+        .news-pop.ss-pd 
+            .container 
+                .news-pop-wrapper 
+                    .news-pop-heads 
+                        .title 
+                            h3.title-36 
+                                span.green BÀI VIẾT TIÊU BIỂU
+                        .news-filter 
+                            a(href="").news-filter-it LOREM
+                            a(href="").news-filter-it LOREM
+                            a(href="").news-filter-it LOREM
+                            a(href="").news-filter-it LOREM
+                    .news-pop-bodies 
+                        .news-pop-list.row.gap-res 
+                            each val,index in Array(4)
+                                .news-pop-item.col 
+                                    .inner  
+                                        .img
+                                            a(href="").img-inner 
+                                                +img(`np${index+1}.jpg`)
+                                            a(href="").btn-circle
+                                                +img("ic-arrow.svg") 
+                                            .tags Lorem ipsum
+                                        .info 
+                                            h4 
+                                                a(href="").info-tt Nữ startup Việt - mục tiêu doanh thu 1.000 tỷ, mang HƯƠNG VỊ Việt vươn tầm thế giới
+                                            p.info-des  Xuất phát điểm với 87 triệu đồng, sau 10 năm, Trí Việt Phát Foods đã từng bước vươn tầm quốc tế, doanh thu 157 tỷ đồng một năm, đặt ra mục tiêu 1.000 tỷ doanh thu trong vòng 4 năm tới.
+    section.ss-core
+        .core.ss-pd
+            .container 
+                .core-wrapper 
+                    .news-newest    
+                        .title 
+                            h3.title-36 
+                                span.green BÀI VIẾT MỚI NHẤT
+                        .news-newest-list.row.rows-2.gap-res 
+                            each val,index in Array(6)
+                                .news-newest-item.col
+                                    .inner 
+                                        .info 
+                                            h4  
+                                                a(href="").info-tt  Nữ startup Việt với mục tiêu doanh thu 1.000 tỷ, mang gia vị Việt vươn tầm thế giới
+                                            p.info-des Xuất phát điểm với 87 triệu đồng, sau 10 năm, Trí Việt Phát Foods đã từng bước vươn tầm quốc tế, doanh thu 157 tỷ đồng một năm, đặt ra mục tiêu 1.000 tỷ doanh thu trong vòng 4 năm tới.
+                                            .info-tags 
+                                                .info-tag Lorem ipsum
+                                                .info-tag Lorem ipsum
+                                        .img 
+                                            a(href="").img-inner
+                                                +img(`nes${index+1}.jpg`) 
+                            .news-pagi 
+                                +PageNumber
+    section.ss-news-event 
+        .news-event.ss-pd
+            .container 
+                .new-event-wrapper 
+                    .title.center
+                        h3.title-36 
+                            span.green HOẠT ĐỘNG - SỰ KIỆN  
+            .news-event-bn 
+                .bg 
+                    +img("news-event.jpg")
+                .news-event-ctn 
+                    p.des  Xuất phát điểm với 87 triệu đồng, sau 10 năm, Trí Việt Phát Foods đã từng bước vươn tầm quốc tế, doanh thu 157 tỷ đồng một năm, đặt ra mục tiêu 1.000 tỷ doanh thu trong vòng 4 năm tới.
+                    +Btn("XEM THÊM","","","ic-arrow.svg")
+            .container 
+                .news-event-list
+                    .row.rows-3.gap-res 
+                        each val,index in Array(3)
+                            .news-pop-item.col 
+                                .inner  
+                                    .img
+                                        a(href="").img-inner 
+                                            +img(`np${index+1}.jpg`)
+                                        a(href="").btn-circle
+                                            +img("ic-arrow.svg") 
+                                        .tags Lorem ipsum
+                                    .info 
+                                        h4 
+                                            a(href="").info-tt Nữ startup Việt - mục tiêu doanh thu 1.000 tỷ, mang HƯƠNG VỊ Việt vươn tầm thế giới
+                                        p.info-des  Xuất phát điểm với 87 triệu đồng, sau 10 năm, Trí Việt Phát Foods đã từng bước vươn tầm quốc tế, doanh thu 157 tỷ đồng một năm, đặt ra mục tiêu 1.000 tỷ doanh thu trong vòng 4 năm tới.
+                        .news-pagi 
+                            +PageNumber
+    section.ss-news-out 
+        .news-out.ss-pd 
+            .container 
+                .news-out-wrapper 
+                    .news-out-flex.row.gap-res 
+                        each val,index in Array(4)
+                            .news-out-item.col
+                                .inner 
+                                    .img 
+                                        a(href="").img-inner
+                                            +img(`no${index+1}.jpg`) 
+                                    .info 
+                                        h4 
+                                            a(href="").info-tt  sản phẩm tiêu biểu
+                                        p.info-des Trí Việt Phát Foods tự hào giới thiệu các sản phẩm tiêu biểu mang đậm chất lượng và hương vị đặc trưng. Sản phẩm của chúng tôi được chế biến từ nguyên liệu tự nhiên, giúp nâng tầm món ăn với hương vị đậm đà và dễ sử dụng. Trí Việt Phát Foods cam kết mang lại an toàn thực phẩm và chất lượng tốt nhất cũng như luôn nỗ lực để đáp ứng nhu cầu ngày càng cao của khách hàng
+                                        +Btn("XEM THÊM","","","ic-arrow.svg")
+                    +Btn("XEM THÊM","","center","ic-arrow.svg")
+                    
+
+

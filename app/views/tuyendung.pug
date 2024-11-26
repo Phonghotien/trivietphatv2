@@ -1,0 +1,127 @@
+extends layout/layout
+block vars
+    -title = 'Tuyển dụng'
+    -mainClass = 'page-recruit'
+    -bodyClass = 'recruit-body'
+    -hdClass = ''
+    -jsLibs = [JsJquery, JsAos, JsSwiper, JsSplitting, JsSmoothScroll, JsGsap, JsGsapScrollTrigger, JsSplide, JsSplideAuto,JsSelect2]
+    -jsComponents = ['swiper', 'header',, 'mobile', 'splitting','scrollTrigger', 'animated','collapse','parallax','select2']
+    -cssLibs = [CssAos, CssSwiper, CssFontAwesomeAll, CssFontAwesome, CssSplitting,CssSplide,CssSelect2]
+    -cssComponents = ['banner']
+    -cssPages = ['childpage','recruit']
+
+block container
+    .banner 
+        .bg 
+            +img("banner.jpg")
+    .marquee
+        .marquee-text 
+            each val,index in Array(5)
+                .marquee-item 
+                    span.ora POUR OUR HEARTS 
+                    |INTO PERFECT SOLUTIONS
+            .marquee-item 
+                span.ora DỐC TOÀN TÂM 
+                |TRAO GIẢI PHÁP TOÀN DIỆN 
+    section.ss-core 
+        .core.ss-pd
+            .container 
+                .core-wrapper 
+                    .title.center
+                        h3.title-45.add-class.text-hori(data-spl) 
+                            |CỘNG ĐỒNG VÀ CON NGƯỜI
+                            br
+                            span.green LÀ NHỮNG GIÁ TRỊ CỐT LÕI
+                        p.title-des(data-aos="fade-up-cus") Chúng tôi tin rằng một cộng đồng vững mạnh và một đội ngũ nhân viên đoàn kết sẽ là nền tảng cho sự phát triển bền vững của Trí Việt Phát Foods, giúp chúng tôi ngày một vươn xa, mang lại giá trị cho khách hàng và xã hội.
+                    .core-slide 
+                        .swiper.row.rows-3.gap-res 
+                            .swiper-wrapper 
+                                each val,index in Array(3)
+                                    .swiper-slide.col 
+                                        .core-item
+                                            .inner 
+                                                .img 
+                                                    a(href="").img-inner
+                                                        +img(`core${index+1}.jpg`)
+                                                a(href="").info-btn SÁNG TẠO
+                                                .info 
+                                                    a(href="").info-btn SÁNG TẠO
+                                                    p.info-des Tại Trí Việt Phát Foods, tư chất lãnh đạo của mỗi cá nhân được nuôi dưỡng và phát triển bởi sự dấn thân, tìm kiếm vấn đề cốt lõi trong từng công việc.
+    section.ss-recruit 
+        .recruit.ss-pd
+            .container 
+                .recruit-wrapper 
+                    .recruit-flex.row 
+                        .recruit-left.col 
+                            .wrapper 
+                                .recruit-filter     
+                                    .recruit-filter-item
+                                        +img("ic-file.svg")
+                                        select(name="" class="re-select-main" data-placeholder="Chọn")
+                                            option(value="")   Chọn
+                                            option(value="1") 1 
+                                            option(value="1") 1 
+                                            option(value="1") 1 
+                                    .recruit-filter-item
+                                        +img("ic-work.svg")
+                                        select(name="" class="re-select-main" data-placeholder="Chọn")
+                                            option(value="")  Chọn
+                                            option(value="1") 1 
+                                            option(value="1") 1 
+                                            option(value="1") 1 
+                                    .recruit-filter-item
+                                        +img("ic-srch.svg")
+                                        input(type="text" placeholder="Tìm kiếm")
+                                p.recruit-note Có 54 kết quả tìm kiếm
+                                .recruit-list.row 
+                                    each val,index in Array(3)
+                                        .recruit-item.col 
+                                            .inner 
+                                                .heads 
+                                                    h4.tt MARKETING BRANDING LEADER
+                                                    .icon 
+                                                        +img("ic-share.svg")
+                                                .bodies 
+                                                    .tags 
+                                                        a(href="").tag 
+                                                            +img("rc-pin.svg") 
+                                                            span.txt VP Công ty Trí Việt Phát
+                                                        a(href="").tag 
+                                                            +img("rc-dollar.svg") 
+                                                            span.txt Lương thỏa thuận
+                                                .footers 
+                                                    .footers-time
+                                                        +img("rc-time.svg") 
+                                                        span.txt 30 mins ago
+                                                    +Btn("CHI TIẾT","","","ic-arrow.svg")
+                                    .recruit-pagi.right
+                                        +PageNumber
+                        .recruit-right.col 
+                            .wrapper 
+                                p.tt VỊ TRÍ 
+                                .recruit-box    
+                                    .heads 
+                                        |TUYỂN DỤNG
+                                        br
+                                        | MARKETING BRADING LEADER
+                                    .bodies 
+                                        .recruit-address 
+                                            p.name Địa chỉ làm việc
+                                            p.val VP Công ty Trí Việt Phát – 81 Tân Hoà 2, P. Hiệp Phú, TP. Thủ Đức, TP.HCM.
+                                        .recruit-address 
+                                            p.name Thời gian làm việc
+                                            p.val Thứ 2 – Thứ 6 và 02 ngày Thứ 7
+                                        .recruit-address 
+                                            p.name Buổi sáng
+                                            p.val 8h00-11h30
+                                        .recruit-address 
+                                            p.name Buổi chiều
+                                            p.val 13h00-17h30
+                                    .footers 
+                                        .recruit-info 
+                                            p.name THÔNG TIN ỨNG TUYỂN
+                                            p.val [TRÍ VIỆT PHÁT] – Họ và tên – Vị trí ứng tuyển – Ngày ứng tuyển.
+                                        .recruit-info 
+                                            p.name GỬI HỒ SƠ VỀ MAIL:
+                                            p.val Hr.dept@trivietphat.net (ghi rõ vị trí ứng tuyển)  – P. Nhân sự.
+                                        +Btn("ỨNG TUYỂN NGAY","","center","ic-arrow.svg")

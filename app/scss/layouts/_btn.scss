@@ -1,0 +1,163 @@
+.btn {
+  @include mid-flex;
+  width: fit-content;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 1rem 0 1rem 0;
+  font-weight: 500;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  gap: 1rem;
+  color: white;
+  font-size: 1.6rem;
+  height: 4.4rem;
+  background-color: var(--color-pri);
+  border: 0.1rem solid var(--color-pri);
+  min-width: 11rem;
+  white-space: nowrap;
+  &.full {
+    width: 100%;
+  }
+
+  &.center {
+    margin: 0 auto;
+  }
+  &.mt24 {
+    margin-top: 2.4rem;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::after {
+    @include pseudo;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.5s ease;
+    background-color: var(--color-third);
+  }
+
+  @include max(800px) {
+    height: 3.8rem;
+    min-width: 10rem;
+  }
+
+  .txt {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1.2rem;
+    transition: 0.4s;
+    gap: 1rem;
+    color: white;
+    line-height: 1;
+
+    &-inner {
+      // transform: translateY(0.2rem);
+    }
+
+    @include max(800px) {
+      font-size: 1.3rem;
+      padding: 0.5rem 1rem;
+      img {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+  }
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 0.4s;
+  }
+
+  @include hover {
+    border-color: var(--color-third);
+
+    .txt {
+      color: black;
+    }
+
+    img {
+      filter: brightness(1) invert(1);
+      transform: rotate(43deg);
+    }
+
+    &::after {
+      transform-origin: bottom right;
+      transform: scaleX(1);
+    }
+  }
+
+  &.second {
+    background-color: var(--color-second);
+    border: 0.1rem solid var(--color-second);
+
+    .txt {
+      color: white;
+    }
+
+    &::after {
+      background-color: var(--color-third);
+    }
+
+    @include hover {
+      border-color: var(--color-third);
+
+      .txt {
+        color: black;
+      }
+
+      &::after {
+        transform-origin: top right;
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  &.third {
+    background-color: var(--color-second);
+    border: 0.1rem solid transparent;
+    min-width: unset;
+    .txt {
+      color: white;
+    }
+
+    img {
+      filter: brightness(1) invert(1);
+    }
+
+    &::after {
+      background-color: red;
+    }
+    @include hover {
+      border-color: red;
+      img {
+        animation: download 1s linear infinite;
+        filter: brightness(0) invert(0);
+      }
+    }
+  }
+}
+
+.seeDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: 0.4s;
+
+  @include hover {
+    color: var(--color-second);
+  }
+}

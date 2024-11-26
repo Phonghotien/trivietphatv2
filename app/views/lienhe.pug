@@ -1,0 +1,105 @@
+extends layout/layout
+block vars
+    -title = 'Liên hệ'
+    -mainClass = 'page-contact'
+    -bodyClass = 'contact-body'
+    -hdClass = ''
+    -jsLibs = [JsJquery, JsAos, JsSwiper, JsSplitting, JsSmoothScroll, JsGsap, JsGsapScrollTrigger, JsSplide, JsSplideAuto,JsSelect2]
+    -jsComponents = ['swiper', 'header', 'mobile', 'splitting','scrollTrigger', 'animated','collapse','parallax','select2']
+    -cssLibs = [CssAos, CssSwiper, CssFontAwesomeAll, CssFontAwesome, CssSplitting,CssSplide,CssSelect2]
+    -cssComponents = ['banner']
+    -cssPages = ['childpage','contact']
+
+block container
+    .banner 
+        .bg 
+            +img("banner.jpg")
+    .marquee
+        .marquee-text 
+            each val,index in Array(2)
+                .marquee-item 
+                    span.ora POUR OUR HEARTS 
+                    span.fw-7
+                        |INTO PERFECT SOLUTIONS
+            each i,index in Array(3)
+                .marquee-item 
+                    span.ora DỐC TOÀN TÂM 
+                    span.fw-7
+                        |TRAO GIẢI PHÁP TOÀN DIỆN 
+    section.ss-contact 
+        .contact.ss-pd 
+            .container 
+                .contact-wrapper 
+                    .contact-flex.row 
+                        .contact-ctn.col 
+                            .wrapper 
+                                .title
+                                    h3.title-36 
+                                        span.green GỬI TIN NHẮN CHO 
+                                            br
+                                            | CHÚNG TÔI
+                                    p.title-des 
+                                        |Chúng tôi sẵn lòng lắng nghe và giải đáp của bạn.
+                                        br
+                                        |Khách hàng hài lòng là ưu tiên hàng đầu.
+                                form(action="")
+                                    .form-list.row 
+                                        .form-ip.col 
+                                            input(type="text" placeholder="HỌ VÀ TÊN*")
+                                        .form-ip.col 
+                                            input(type="text" placeholder="SỐ ĐIỆN THOẠI*")
+                                        .form-ip.col 
+                                            input(type="text" placeholder="EMAIL*")
+                                        .form-ip.col 
+                                            input(type="text" placeholder="TIÊU ĐỀ*")
+                                        .form-ip.col 
+                                            textarea(name="" placeholder="LỜI NHẮN") 
+                                        .form-ip.col 
+                                            +Btn("Gửi liên hệ","","","ic-arrow.svg")
+                        .contact-info.col 
+                            .wrapper
+                                .contact-dec 
+                                    +img("text-arrow.svg")
+                                .contact-box 
+                                    .title 
+                                        h4.title-36 
+                                            span.green THÔNG TIN LIên HỆ
+                                    .contact-block 
+                                        .contact-block-line 
+                                            p.name ĐỊA CHỈ
+                                            p.val 
+                                                |81 Đường Tân Hòa 2, Khu phố 6, Phường Hiệp Phú, 
+                                                br
+                                                |Thành Phố Thủ Đức, Thành phố Hồ Chí Minh
+                                        .contact-block-line 
+                                            p.name HOTLINE
+                                            p.val 0987.799.239
+                                        .contact-block-line 
+                                            p.name MAIL
+                                            p.val marketing@trivietphat.net
+    section.ss-core.contact-recruit
+        .core.ss-pd
+            .container 
+                .core-wrapper 
+                    .title.center
+                        h3.title-45.add-class.text-hori(data-spl) 
+                            |ĐỒNG HÀNH PHÁT TRIỂN BỀN VỮNG
+                            br
+                            span.green  CÙNG TRÍ VIỆT PHÁT FOODS
+                    .core-slide 
+                        .swiper.row.rows-2.gap-res 
+                            .swiper-wrapper 
+                                each val,index in Array(2)
+                                    .swiper-slide.col 
+                                        .recruit-news 
+                                            .inner 
+                                                a(href="").heads
+                                                    h4.title
+                                                        span.title-36 
+                                                            span.green VỊ TRÍ TUYỂN DỤNG
+                                                    span.icon 
+                                                        +img("ic-arrow.svg")
+                                                p.des Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+                                                .img 
+                                                    a(href="").img-inner
+                                                        +img(`rc-news${index+1}.jpg`) 
