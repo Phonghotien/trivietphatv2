@@ -1,7 +1,7 @@
 ```
-    Coding by: Hoang Chuan
-    Tel: 0901.874.906
-    Email: hoanggiangchuan@gmail.com
+    Coding by: Tien Phong
+    Tel: 0385589187
+    Email: phonght.dev@gmail.com
 ```
 
 # Cài đặt
